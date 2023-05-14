@@ -1,30 +1,27 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flarezchat/main.dart';
+import 'package:flarezchat/app/screens/pages/HomeScreen.dart';
+import 'package:flarezchat/app/screens/intro/onBoardingScreens/view/onBoardingScreen.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('Test app behavior based on onboarding completion', (WidgetTester tester) async {
+    // Mock the SharedPreferences instance
+    SharedPreferences.setMockInitialValues({'onboarding_complete': true});
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Build the app with onboarding complete
+    await tester.pumpWidget(const MyApp(onboardingComplete: true));
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    // Verify that the HomeScreen is displayed
+    expect(find.byType(HomePage), findsOneWidget);
+    expect(find.byType(onBoardingScreenHome), findsNothing);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Build the app with onboarding incomplete
+    await tester.pumpWidget(const MyApp(onboardingComplete: false));
+
+    // Verify that the OnboardingScreen is displayed
+    expect(find.byType(HomePage), findsOneWidget);
+    expect(find.byType(onBoardingScreenHome), findsNothing);
   });
 }
