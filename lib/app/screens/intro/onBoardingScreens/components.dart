@@ -1,3 +1,4 @@
+import 'package:flarezchat/app/screens/intro/splash/SplashScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flarezchat/app/screens/intro/onBoardingScreens/utils/colors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -26,7 +27,7 @@ class GetStartBtn extends StatelessWidget {
         // Navigate to the home page
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => HomePage()),
+          MaterialPageRoute(builder: (context) => SplashScreen()),
         );
       },
       child: Container(

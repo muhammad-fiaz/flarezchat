@@ -3,6 +3,7 @@ import 'package:flarezchat/app/screens/intro/onBoardingScreens/utils/colors.dart
 import 'package:flarezchat/app/screens/intro/onBoardingScreens/view/onBoardingScreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'app/screens/intro/splash/SplashScreen.dart';
 import 'app/screens/pages/HomeScreen.dart';
 
 Future<void> main() async {
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           )),
-      home: onboardingComplete ? const HomePage() : const onBoardingScreenHome(),
+      home: onboardingComplete ? const SplashScreen() : const onBoardingScreenHome(),
     );
   }
 }
