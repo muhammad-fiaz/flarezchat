@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flarezchat/app/screens/intro/onBoardingScreens/utils/colors.dart';
 import 'package:flarezchat/app/screens/intro/onBoardingScreens/view/onBoardingScreen.dart';
@@ -7,8 +8,9 @@ import 'app/screens/intro/splash/SplashScreen.dart';
 import 'app/screens/pages/HomeScreen.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
 
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   // Get the SharedPreferences instance
   SharedPreferences prefs = await SharedPreferences.getInstance();
 

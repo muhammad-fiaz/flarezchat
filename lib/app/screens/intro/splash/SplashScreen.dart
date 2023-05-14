@@ -1,4 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flarezchat/app/screens/auth/AuthScreens/SigninScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
@@ -38,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen>
     } else {
       Future.delayed(Duration(seconds: 3)).then((value) => Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomePage()),
+        MaterialPageRoute(builder: (context) => LoginPage()),
       ));
     }
   }

@@ -46,3 +46,7 @@ app.*.map.json
 #ignore assets
 /assets/
 assets/
+
+!/ios/Runner/GoogleService-Info.plist
+!/android/app/google-services.json
+!/assets/
