@@ -3,7 +3,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 
 import '../intro/splash/SplashScreen.dart';
 
-
+// This Will display the internet Connection Not Available Page
 class NoInternetConnectionPage extends StatelessWidget {
   final VoidCallback onRetry;
 

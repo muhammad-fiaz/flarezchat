@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen>
     _controller.forward();
     checkConnectivity();
   }
-
+//This will Check the Internet Connect Available or not During Splash Screen
   Future<void> checkConnectivity() async {
     final connectivityResult = await Connectivity().checkConnectivity();
     if (connectivityResult == ConnectivityResult.none) {
