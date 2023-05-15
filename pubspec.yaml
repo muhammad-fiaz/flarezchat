@@ -46,7 +46,12 @@ dependencies:
   firebase_storage: ^11.2.0
   firebase_auth: ^4.6.0
   page_transition: ^2.0.2
-
+  google_sign_in: ^5.0.0
+  flutter_facebook_auth: ^4.0.0
+  #sign_in_with_apple: ^3.0.0
+  url_launcher: ^6.0.0
+  image_picker: ^0.8.4+4
+  image_cropper: ^1.4.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

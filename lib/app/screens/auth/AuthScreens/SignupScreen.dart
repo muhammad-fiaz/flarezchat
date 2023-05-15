@@ -5,6 +5,9 @@ import 'package:flarezchat/app/screens/auth/components/my_textfield.dart';
 import 'package:flarezchat/app/screens/auth/components/square_tile.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:io';
+import 'package:image_picker/image_picker.dart';
+import 'package:image_cropper/image_cropper.dart';
 
 import '../../pages/HomeScreen.dart';
 import '../components/signup_my_button.dart';
@@ -21,6 +24,7 @@ class _SignUpPageState extends State<SignUpPage> {
   final usernameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  File? _selectedImage;
 
   // sign user up method
   void signUserUp() {}
@@ -46,16 +50,26 @@ class _SignUpPageState extends State<SignUpPage> {
               children: [
                 const SizedBox(height: 50),
 
-                Container(
-                  width: 100,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(color: Colors.grey, width: 2),
-                  ),
-                  child: Icon(
-                    Icons.person_add,
-                    size: 70,
+                InkWell(
+                  onTap: _pickImageAndCrop,
+                  child: Container(
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(color: Colors.grey, width: 2),
+                    ),
+                    child: _selectedImage != null
+                        ? ClipOval(
+                      child: Image.file(
+                        _selectedImage!,
+                        fit: BoxFit.cover,
+                      ),
+                    )
+                        : Icon(
+                      Icons.person_add,
+                      size: 70,
+                    ),
                   ),
                 ),
 
@@ -203,7 +217,38 @@ class _SignUpPageState extends State<SignUpPage> {
       ),
     );
   }
+//this will pick the image and crop from device
+  Future<void> _pickImageAndCrop() async {
+    final picker = ImagePicker();
+    final pickedImage = await picker.pickImage(source: ImageSource.gallery);
 
+    if (pickedImage != null) {
+      final croppedImage = await ImageCropper().cropImage(
+        sourcePath: pickedImage.path,
+        aspectRatio: CropAspectRatio(ratioX: 1, ratioY: 1),
+        compressQuality: 100,
+        maxWidth: 700,
+        maxHeight: 700,
+        androidUiSettings: AndroidUiSettings(
+          toolbarTitle: 'Crop Image',
+          toolbarColor: Colors.deepOrange,
+          toolbarWidgetColor: Colors.white,
+          initAspectRatio: CropAspectRatioPreset.original,
+          lockAspectRatio: false,
+        ),
+        iosUiSettings: IOSUiSettings(
+          title: 'Crop Image',
+        ),
+      );
+
+      if (croppedImage != null) {
+        setState(() {
+          _selectedImage = croppedImage;
+        });
+      }
+    }
+  }
+//this will create a new account in firebase
   Future<void> Create_Account() async {
     final email = emailController.text.trim();
     final password = passwordController.text.trim();
@@ -253,12 +298,16 @@ class _SignUpPageState extends State<SignUpPage> {
         password: password,
       );
       final userId = userCredential.user!.uid;
-      // Store user id in persistent storage
+
+      // Store user email and ID in persistent storage
       final prefs = await SharedPreferences.getInstance();
+      prefs.setString('email', email);
       prefs.setString('userId', userId);
-      // if sign up successful, navigate to home screen
-      Navigator.of(context).pushReplacement(
+
+      // Clear navigation stack and navigate to home screen
+      Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (context) => HomePage()),
+            (route) => false,
       );
     } on FirebaseAuthException catch (e) {
       String errorMessage = 'Error creating user account';
@@ -284,4 +333,7 @@ class _SignUpPageState extends State<SignUpPage> {
       );
     }
   }
+
+
+
 }

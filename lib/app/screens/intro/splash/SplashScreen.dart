@@ -3,6 +3,7 @@ import 'package:flarezchat/app/screens/auth/AuthScreens/SigninScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../exceptions/NoInternetConnectionPage.dart';
 import '../../pages/HomeScreen.dart';
@@ -28,19 +29,71 @@ class _SplashScreenState extends State<SplashScreen>
     _controller.forward();
     checkConnectivity();
   }
-//This will Check the Internet Connect Available or not During Splash Screen
+// This will Check if the Internet Connection is Available During Splash Screen
   Future<void> checkConnectivity() async {
     final connectivityResult = await Connectivity().checkConnectivity();
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    final userId = prefs.getString('userId');
+    final email = prefs.getString('email');
+
     if (connectivityResult == ConnectivityResult.none) {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => NoInternetConnectionPage(onRetry: () {  },)),
-      );
+      if (userId != null && email != null) {
+        // Check if the stored credentials are valid in Firebase
+        // If valid, navigate to the home page with a fade-in animation
+        // Otherwise, navigate to the login page with a fade-in animation
+        await Future.delayed(Duration(seconds: 3));
+        Navigator.pushReplacement(
+          context,
+          PageRouteBuilder(
+            transitionDuration: Duration(milliseconds: 300),
+            pageBuilder: (context, animation, secondaryAnimation) => FadeTransition(
+              opacity: animation,
+              child: HomePage(),
+            ),
+          ),
+        );
+      } else {
+        await Future.delayed(Duration(seconds: 3));
+        Navigator.pushReplacement(
+          context,
+          PageRouteBuilder(
+            transitionDuration: Duration(milliseconds: 300),
+            pageBuilder: (context, animation, secondaryAnimation) => FadeTransition(
+              opacity: animation,
+              child: LoginPage(),
+            ),
+          ),
+        );
+      }
     } else {
-      Future.delayed(Duration(seconds: 3)).then((value) => Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => LoginPage()),
-      ));
+      Future.delayed(Duration(seconds: 3)).then((value) {
+        if (userId != null && email != null) {
+          // Check if the stored credentials are valid in Firebase
+          // If valid, navigate to the home page with a fade-in animation
+          // Otherwise, navigate to the login page with a fade-in animation
+          Navigator.pushReplacement(
+            context,
+            PageRouteBuilder(
+              transitionDuration: Duration(milliseconds: 300),
+              pageBuilder: (context, animation, secondaryAnimation) => FadeTransition(
+                opacity: animation,
+                child: HomePage(),
+              ),
+            ),
+          );
+        } else {
+          Navigator.pushReplacement(
+            context,
+            PageRouteBuilder(
+              transitionDuration: Duration(milliseconds: 300),
+              pageBuilder: (context, animation, secondaryAnimation) => FadeTransition(
+                opacity: animation,
+                child: LoginPage(),
+              ),
+            ),
+          );
+        }
+      });
     }
   }
 
