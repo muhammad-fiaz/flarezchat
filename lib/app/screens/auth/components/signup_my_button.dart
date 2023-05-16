@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+/*
+  Project: Flarez Chat
+  Author: Muhammad Fiaz
+  GitHub: https://github.com/muhammad-fiaz
+*/
 class MyButton extends StatelessWidget {
   final Function()? onTap;
 

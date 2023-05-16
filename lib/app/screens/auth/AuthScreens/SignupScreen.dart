@@ -3,6 +3,7 @@ import 'package:flarezchat/app/screens/auth/AuthScreens/SigninScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flarezchat/app/screens/auth/components/my_textfield.dart';
 import 'package:flarezchat/app/screens/auth/components/square_tile.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:io';
@@ -12,6 +13,11 @@ import 'package:image_cropper/image_cropper.dart';
 import '../../pages/HomeScreen.dart';
 import '../components/signup_my_button.dart';
 
+/*
+  Project: Flarez Chat
+  Author: Muhammad Fiaz
+  GitHub: https://github.com/muhammad-fiaz
+*/
 class SignUpPage extends StatefulWidget {
   SignUpPage({Key? key}) : super(key: key);
 
@@ -115,11 +121,10 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
 
                 const SizedBox(height: 25),
-
-                // sign up button
+                //on Signup button
                 MyButton(
                   text: 'Sign Up',
-                  onTap: Create_Account,
+                  onTap: () => Create_Account(context),
                 ),
 
                 const SizedBox(height: 30),
@@ -217,6 +222,7 @@ class _SignUpPageState extends State<SignUpPage> {
       ),
     );
   }
+
 //this will pick the image and crop from device
   Future<void> _pickImageAndCrop() async {
     final picker = ImagePicker();
@@ -248,8 +254,45 @@ class _SignUpPageState extends State<SignUpPage> {
       }
     }
   }
-//this will create a new account in firebase
-  Future<void> Create_Account() async {
+
+// Create a GlobalKey for the loading dialog
+  final GlobalKey<State> _loadingDialogKey = GlobalKey<State>();
+
+// Create a function to show the loading dialog
+  void _showLoadingDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return WillPopScope(
+          onWillPop: () async => false,
+          child: Center(
+            key: _loadingDialogKey,
+            child: Container(
+              width: 120,
+              height: 120,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: SpinKitCubeGrid(
+                color: Colors.blue,
+                size: 50,
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+// Function to hide the loading dialog
+  void _hideLoadingDialog(BuildContext context) {
+    Navigator.of(context).pop();
+  }
+
+// Function to create an account in Firebase
+  Future<void> Create_Account(BuildContext context) async {
     final email = emailController.text.trim();
     final password = passwordController.text.trim();
 
@@ -279,7 +322,9 @@ class _SignUpPageState extends State<SignUpPage> {
         context: context,
         builder: (context) => AlertDialog(
           title: Text('Sign Up Error'),
-          content: Text('Password must be at least 8 characters long and contain at least one letter and one number.'),
+          content: Text(
+            'Password must be at least 8 characters long and contain at least one letter and one number.',
+          ),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
@@ -292,6 +337,9 @@ class _SignUpPageState extends State<SignUpPage> {
     }
 
     try {
+      // Show the loading dialog
+      _showLoadingDialog(context);
+
       final UserCredential userCredential =
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
@@ -303,6 +351,9 @@ class _SignUpPageState extends State<SignUpPage> {
       final prefs = await SharedPreferences.getInstance();
       prefs.setString('email', email);
       prefs.setString('userId', userId);
+
+      // Hide the loading dialog
+      _hideLoadingDialog(context);
 
       // Clear navigation stack and navigate to home screen
       Navigator.of(context).pushAndRemoveUntil(
@@ -316,6 +367,8 @@ class _SignUpPageState extends State<SignUpPage> {
       } else if (e.code == 'email-already-in-use') {
         errorMessage = 'The account already exists for that email.';
       }
+      // Hide the loading dialog
+      _hideLoadingDialog(context);
       showDialog(
         context: context,
         builder: (context) {
@@ -331,9 +384,8 @@ class _SignUpPageState extends State<SignUpPage> {
           );
         },
       );
+
+    }
     }
   }
 
-
-
-}

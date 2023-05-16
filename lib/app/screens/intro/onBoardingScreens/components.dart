@@ -4,6 +4,12 @@ import 'package:flarezchat/app/screens/intro/onBoardingScreens/utils/colors.dart
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../pages/HomeScreen.dart';
+
+/*
+  Project: Flarez Chat
+  Author: Muhammad Fiaz
+  GitHub: https://github.com/muhammad-fiaz
+*/
 class GetStartBtn extends StatelessWidget {
   const GetStartBtn({
     Key? key,

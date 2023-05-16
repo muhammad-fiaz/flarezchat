@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+/*
+  Project: Flarez Chat
+  Author: Muhammad Fiaz
+  GitHub: https://github.com/muhammad-fiaz
+*/
 class SquareTile extends StatelessWidget {
   final String imagePath;
   const SquareTile({

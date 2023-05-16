@@ -3,6 +3,11 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 
 import '../intro/splash/SplashScreen.dart';
 
+/*
+  Project: Flarez Chat
+  Author: Muhammad Fiaz
+  GitHub: https://github.com/muhammad-fiaz
+*/
 // This Will display the internet Connection Not Available Page
 class NoInternetConnectionPage extends StatelessWidget {
   final VoidCallback onRetry;

@@ -7,6 +7,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'app/screens/intro/splash/SplashScreen.dart';
 import 'app/screens/pages/HomeScreen.dart';
 
+/*
+  Project: Flarez Chat
+  Author: Muhammad Fiaz
+  GitHub: https://github.com/muhammad-fiaz
+*/
 Future<void> main() async {
 
   WidgetsFlutterBinding.ensureInitialized();

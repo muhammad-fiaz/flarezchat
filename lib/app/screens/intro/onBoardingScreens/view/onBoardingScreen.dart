@@ -4,6 +4,12 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../model/items_model.dart';
 import '../utils/colors.dart';
 import '../components.dart';
+
+/*
+  Project: Flarez Chat
+  Author: Muhammad Fiaz
+  GitHub: https://github.com/muhammad-fiaz
+*/
 // OnBoardingScreens Controller
 class onBoardingScreenHome extends StatefulWidget {
   const onBoardingScreenHome({Key? key}) : super(key: key);

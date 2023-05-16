@@ -4,6 +4,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flarezchat/app/screens/auth/components/my_textfield.dart';
 import 'package:flarezchat/app/screens/auth/components/square_tile.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
@@ -14,6 +15,12 @@ import '../../pages/HomeScreen.dart';
 import '../components/my_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+
+/*
+  Project: Flarez Chat
+  Author: Muhammad Fiaz
+  GitHub: https://github.com/muhammad-fiaz
+*/
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
 
@@ -272,34 +279,62 @@ class LoginPage extends StatelessWidget {
     }
   }
 */
+
+
   void signUserIn_auth(BuildContext context) async {
     try {
       final String email = emailController.text.trim();
       final String password = passwordController.text.trim();
 
-          // Validate email and password
-          if (email.isEmpty || password.isEmpty) {
-            showDialog(
-              context: context,
-              builder: (context) => AlertDialog(
-                title: Text('Validation Error'),
-                content: Text('Email and password cannot be empty.'),
-                actions: [
-                  TextButton(
-                    child: Text('OK'),
-                    onPressed: () => Navigator.pop(context),
-                  ),
-                ],
+      // Validate email and password
+      if (email.isEmpty || password.isEmpty) {
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text('Validation Error'),
+            content: Text('Email and password cannot be empty.'),
+            actions: [
+              TextButton(
+                child: Text('OK'),
+                onPressed: () => Navigator.pop(context),
               ),
-            );
-            return;
-          }
+            ],
+          ),
+        );
+        return;
+      }
+
+      // Show loading popup
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return Center(
+            child: Container(
+              width: 120,
+              height: 120,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: SpinKitCubeGrid(
+                color: Colors.blue,
+                size: 50,
+              ),
+            ),
+          );
+        },
+      );
+
       // Sign in the user with email and password
       final UserCredential userCredential =
       await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
+
+      // Hide the loading popup
+      Navigator.pop(context);
 
       // Navigate to the homepage if sign-in is successful
       final user = userCredential.user;
@@ -315,6 +350,9 @@ class LoginPage extends StatelessWidget {
         );
       }
     } catch (e) {
+      // Hide the loading popup
+      Navigator.pop(context);
+
       // Handle sign-in errors
       print(e.toString());
 

@@ -8,6 +8,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../exceptions/NoInternetConnectionPage.dart';
 import '../../pages/HomeScreen.dart';
 
+/*
+  Project: Flarez Chat
+  Author: Muhammad Fiaz
+  GitHub: https://github.com/muhammad-fiaz
+*/
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 

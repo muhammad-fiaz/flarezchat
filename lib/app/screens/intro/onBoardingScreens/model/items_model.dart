@@ -1,4 +1,9 @@
 
+/*
+  Project: Flarez Chat
+  Author: Muhammad Fiaz
+  GitHub: https://github.com/muhammad-fiaz
+*/
 class Chat {
   final String title;
   final String subtitle;
