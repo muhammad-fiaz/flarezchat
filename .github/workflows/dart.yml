@@ -21,7 +21,7 @@ jobs:
         run: flutter pub get
 
       - name: Analyze project source
-        run: flutter analyze
+        run: flutter analyze --exclude=assets
 
       - name: Run tests
         run: flutter test
