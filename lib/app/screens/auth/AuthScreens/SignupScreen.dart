@@ -1,14 +1,14 @@
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flarezchat/app/screens/auth/AuthScreens/SigninScreen.dart';
-import 'package:flutter/material.dart';
 import 'package:flarezchat/app/screens/auth/components/my_textfield.dart';
 import 'package:flarezchat/app/screens/auth/components/square_tile.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:io';
-import 'package:image_picker/image_picker.dart';
 import 'package:image_cropper/image_cropper.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../pages/HomeScreen.dart';
 import '../components/signup_my_button.dart';

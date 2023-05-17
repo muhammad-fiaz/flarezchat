@@ -1,19 +1,16 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flarezchat/app/screens/auth/AuthScreens/SignupScreen.dart';
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
 import 'package:flarezchat/app/screens/auth/components/my_textfield.dart';
 import 'package:flarezchat/app/screens/auth/components/square_tile.dart';
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-//import 'package:sign_in_with_apple/sign_in_with_apple.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 import '../../pages/HomeScreen.dart';
 import '../components/my_button.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 
 /*
@@ -27,7 +24,8 @@ class LoginPage extends StatelessWidget {
   // text editing controllers
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-
+  final GoogleSignIn googleSignIn = GoogleSignIn();
+  final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
   // sign user in method
   void signUserIn() {}
 
@@ -150,7 +148,7 @@ class LoginPage extends StatelessWidget {
                   children:  [
                     // google button
                     GestureDetector(
-                      onTap: () => showComingSoonMessage(context),
+                      onTap: () => signInWithGoogle(context),
                       child: SquareTile(imagePath: 'assets/images/google.png'),
                     ),
 
@@ -238,47 +236,87 @@ class LoginPage extends StatelessWidget {
       },
     );
   }
-  /*
-  void signUserIn_auth(BuildContext context) async {
+  Future<void> signInWithGoogle(BuildContext context) async {
     try {
-      final String email = emailController.text.trim();
-      final String password = passwordController.text.trim();
+      // Trigger the Google sign-in flow
+      final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
 
-      // Validate email and password (you can add your own validation logic)
+      if (googleUser != null) {
+        // Obtain the authentication details from the Google sign-in
+        final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
 
-      // Sign in the user with email and password
-      final UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
-
-      // Navigate to the homepage if sign-in is successful
-      if (userCredential.user != null) {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => HomePage()),
+        // Create a new credential using the access token
+        final AuthCredential credential = GoogleAuthProvider.credential(
+          accessToken: googleAuth.accessToken,
+          idToken: googleAuth.idToken,
         );
-      }
-    } catch (e) {
-      // Handle sign-in errors
-      print(e.toString());
-      // Show error message to the user (you can use a dialog, SnackBar, etc.)
-      showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text('Sign-in Error'),
-          content: Text(e.toString()),
-          actions: [
-            TextButton(
-              child: Text('OK'),
-              onPressed: () => Navigator.pop(context),
+
+        // Show loading popup
+        showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (BuildContext context) {
+            return Center(
+              child: Container(
+                width: 120,
+                height: 120,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: SpinKitCubeGrid(
+                  color: Colors.blue,
+                  size: 50,
+                ),
+              ),
+            );
+          },
+        );
+
+        // Sign in to Firebase with the Google credential
+        final UserCredential userCredential = await firebaseAuth.signInWithCredential(credential);
+
+        // Store user ID and email in persistent storage
+        final User? user = userCredential.user;
+        if (user != null) {
+          SharedPreferences prefs = await SharedPreferences.getInstance();
+          prefs.setString('userId', user.uid);
+          prefs.setString('email', user.email ?? '');
+
+          // Hide the loading popup
+          Navigator.pop(context);
+
+          // Navigate to the homepage if sign-in is successful
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => HomePage()),
+          );
+        } else {
+          // Hide the loading popup
+          Navigator.pop(context);
+
+          // Display error message for unsuccessful sign-in
+          showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+              title: Text('Sign-in Error'),
+              content: Text('Failed to sign in with the selected email.'),
+              actions: [
+                TextButton(
+                  child: Text('OK'),
+                  onPressed: () => Navigator.pop(context),
+                ),
+              ],
             ),
-          ],
-        ),
-      );
+          );
+        }
+      }
+    } catch (error) {
+      print('Google sign-in error: $error');
+      // Handle the error gracefully or display an error message
     }
   }
-*/
+
 
 
   void signUserIn_auth(BuildContext context) async {

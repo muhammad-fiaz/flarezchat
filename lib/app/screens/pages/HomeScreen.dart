@@ -1,5 +1,8 @@
+import 'package:flarezchat/app/screens/pages/Menu/StarredMessages.dart';
 import 'package:flarezchat/app/screens/pages/settings/Settings.dart';
 import 'package:flutter/material.dart';
+
+import 'Contacts/NewContacts.dart';
 
 /*
   Project: Flarez Chat
@@ -81,6 +84,10 @@ class _HomePageState extends State<HomePage> {
               if (value == 'new_group') {
                 // Implement new group functionality
               } else if (value == 'starred_messages') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => StarredMessagesPage()),
+                );
                 // Implement starred messages functionality
               } else if (value == 'settings') {
                 // Implement settings functionality
@@ -200,6 +207,29 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
+      floatingActionButton: Stack(
+        children: [
+          Padding(
+            padding: EdgeInsets.only(bottom: 70.0, right: 16.0),
+            child: Align(
+              alignment: Alignment.bottomRight,
+              child: FloatingActionButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => NewContactPage()),
+                  );
+                },
+                child: Icon(Icons.chat),
+                backgroundColor: Colors.blue,
+              ),
+            ),
+          ),
+        ],
+      ),
+
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (index) {

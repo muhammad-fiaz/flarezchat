@@ -49,14 +49,14 @@ This will create a local copy of the Flarez Chat project on your machine.
 
 If you encounter an error related to pub get, you can try running the following command to update outdated packages:
 
-                 flutter pub outdated
+                   flutter pub outdated
 
 This command will show you a list of outdated packages. You can then use the flutter pub upgrade command to upgrade the packages to their latest versions:
 
-                 flutter pub upgrade      
+                   flutter pub upgrade      
 4. Run the app:
 
-                    flutter run
+                   flutter run
 Please note that these instructions assume you have Flutter and Git already set up on your machine. If you encounter any [issues](https://github.com/muhammad-fiaz/flarezchat/issues/new) or have any further questions, feel free to ask.
 
 also Make sure you have a connected device or emulator running before executing the flutter run command. This will launch the app on the selected device for testing and development.

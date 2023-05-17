@@ -1,9 +1,7 @@
+import 'package:flarezchat/app/screens/intro/onBoardingScreens/utils/colors.dart';
 import 'package:flarezchat/app/screens/intro/splash/SplashScreen.dart';
 import 'package:flutter/material.dart';
-import 'package:flarezchat/app/screens/intro/onBoardingScreens/utils/colors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../../pages/HomeScreen.dart';
 
 /*
   Project: Flarez Chat
