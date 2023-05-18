@@ -1,0 +1,10 @@
+D:/Flutter/flarezchat/android/build/windows/runner/Release/data/icudtl.dat
+D:/Flutter/flarezchat/android/build/windows/runner/Release/flutter_windows.dll
+D:/Flutter/flarezchat/android/build/windows/runner/Release/data/flutter_assets/AssetManifest.bin
+D:/Flutter/flarezchat/android/build/windows/runner/Release/data/flutter_assets/AssetManifest.json
+D:/Flutter/flarezchat/android/build/windows/runner/Release/data/flutter_assets/FontManifest.json
+D:/Flutter/flarezchat/android/build/windows/runner/Release/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+D:/Flutter/flarezchat/android/build/windows/runner/Release/data/flutter_assets/NOTICES.Z
+D:/Flutter/flarezchat/android/build/windows/runner/Release/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+D:/Flutter/flarezchat/android/build/windows/runner/Release/data/flutter_assets/shaders/ink_sparkle.frag
+D:/Flutter/flarezchat/android/build/windows/runner/Release/data/app.so

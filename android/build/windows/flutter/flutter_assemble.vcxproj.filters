@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Flutter\flarezchat\android\build\windows\CMakeFiles\41aa5dc4a67cb77626d2d6670033ec8c\flutter_windows.dll.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Flutter\flarezchat\android\build\windows\CMakeFiles\cbbda3031a580542d2ea5a5f27b0399d\flutter_assemble.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Flutter\flarezchat\android\windows\flutter\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Flutter\flarezchat\android\build\windows\flutter\CMakeFiles\flutter_assemble" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{DA1CE9E3-C53E-3243-B263-4FB304757BF2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
