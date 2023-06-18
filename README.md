@@ -41,11 +41,11 @@ This will create a local copy of the Flarez Chat project on your machine.
 
 2. Once the cloning process is complete, navigate to the project directory using the following command:
 
-                    cd flarez-chat
+                  cd flarez-chat
 
 3. Before running the app, make sure to install the required dependencies. Run the following command:
 
-                    flutter pub get
+                  flutter pub get
 
 If you encounter an error related to pub get, you can try running the following command to update outdated packages:
 
