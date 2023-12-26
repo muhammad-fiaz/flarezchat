@@ -4,6 +4,16 @@ Flarez Chat is a messaging app that allows users to connect and communicate with
 
 Please note that this project is a work in progress, and certain features may be incomplete or subject to changes. Use it at your own risk.
 
+
+## Sample ScreenShots
+
+<div align="center">
+  <img src="https://github.com/muhammad-fiaz/flarezchat/assets/75434191/b138a73f-3117-427b-b092-0467a4d40bce.png" alt="login-preview" width="200">
+  <img src="https://github.com/muhammad-fiaz/flarezchat/assets/75434191/ef5e0103-22d9-4561-81c0-2b84cc8caca7.png" alt="settings-preview" width="200">
+     <img src="https://github.com/muhammad-fiaz/flarezchat/assets/75434191/3735b1d8-0f98-4cfe-a800-9dd30d0fc2fc.png" alt="HomeScreen-preview" width="200">
+  <img src="https://github.com/muhammad-fiaz/flarezchat/assets/75434191/b138a73f-3117-427b-b092-0467a4d40bce.png" alt="contacts-preview" width="200">
+</div>
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
@@ -25,11 +35,32 @@ Ensure that you have [Flutter](https://docs.flutter.dev/get-started/install) ins
 
 Install [Git](https://git-scm.com/) on your machine if it is not already installed. You can download and install Git from the [official website](https://git-scm.com/downloads).
 
+### Firebase Setup
+
+1. Create a new Firebase project on the [Firebase Console](https://console.firebase.google.com/).
+
+2. Add a new Android app to your Firebase project, and follow the setup instructions. This will include downloading the `google-services.json` file.
+
+   - Download the `google-services.json` file from the Firebase Console.
+
+   - Place the `google-services.json` file in the `android/app` directory of your Flutter project.
+
+3. Add a new iOS app to your Firebase project, and follow the setup instructions. This will include downloading the `GoogleService-Info.plist` file.
+
+   - Download the `GoogleService-Info.plist` file from the Firebase Console.
+
+   - Place the `GoogleService-Info.plist` file in the `ios/Runner` directory of your Flutter project.
+
+4. Add the Firebase SDK to your Flutter project by following the instructions in the [official documentation](https://firebase.flutter.dev/docs/overview).
+
+5. Run the following commands to clone the repository and install dependencies:
+
 Open your preferred terminal or command prompt.
 
 Navigate to the directory where you want to clone the [Flarez Chat](https://github.com/muhammad-fiaz/flarezchat) repository.
 
 Run the following command to clone the repository:
+### Clone Repository
 
 1. Clone the repository:
 
@@ -61,19 +92,28 @@ Please note that these instructions assume you have Flutter and Git already set 
 
 also Make sure you have a connected device or emulator running before executing the flutter run command. This will launch the app on the selected device for testing and development.
 
-# Contributing
+## Contributing
+Contributions are welcome! Before contributing, please read our [Contributing Guidelines](CONTRIBUTING.md) to ensure a smooth and collaborative development process.
 
-Contributions are welcome! If you encounter any issues or would like to suggest new features, please create a [new issue](https://github.com/muhammad-fiaz/flarezchat/issues/new) or submit a [pull request](https://github.com/muhammad-fiaz/flarezchat/pulls).
+## Code of Conduct
+
+Please review our [Code of Conduct](CODE_OF_CONDUCT.md) to understand the standards of behavior we expect from contributors and users of this project.
+
+## License
+
+This project is licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0). See [LICENSE](LICENSE) for more details.
+
+## Support the Project
+<br>
+<div align="center">
+
+<h5> <strong> 💰 You can help me improve more by offering a little support on any platform❤️</strong></h5>
+
+[![BuyMeACoffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/muhammadfiaz) [![Patreon](https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white)](https://patreon.com/muhammadfiaz) [![Ko-Fi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/muhammadfiaz)
+[![Sponsor muhammad-fiaz](https://img.shields.io/badge/Sponsor-%231EAEDB.svg?&style=for-the-badge&logo=GitHub-Sponsors&logoColor=white)](https://github.com/sponsors/muhammad-fiaz)
+[![Open Collective Backer](https://img.shields.io/badge/Open%20Collective-Backer-%238CC84B?style=for-the-badge&logo=open-collective&logoColor=white)](https://opencollective.com/muhammadfiaz)
+</div>
 
 
 
-# Contact
-
-For more information about Flarez Chat, you can reach out to the author:
-
-👤 **Muhammad Fiaz**
-- GitHub: [muhammad-fiaz](https://github.com/muhammad-fiaz)
-
-
-**Note: This project is currently under development and not yet stable. Use it for testing and development purposes only.**
-
+## Happy Coding ❤️
