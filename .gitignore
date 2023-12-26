@@ -43,10 +43,8 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-#ignore assets
-/assets/
-assets/
 
-!/ios/Runner/GoogleService-Info.plist
-!/android/app/google-services.json
+
+/ios/Runner/GoogleService-Info.plist
 !/assets/
+/android/app/google-services.json

@@ -4,12 +4,6 @@ import 'package:flutter/material.dart';
 
 import 'Contacts/NewContacts.dart';
 
-/*
-  Project: Flarez Chat
-  Author: Muhammad Fiaz
-  GitHub: https://github.com/muhammad-fiaz
-*/
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -34,9 +28,7 @@ class _HomePageState extends State<HomePage> {
       'image': 'assets/images/jack.png',
       'name': 'Status 3',
     },
-    // Add more status items here
   ];
-
 
   bool _isMessageShowing = false;
 
@@ -80,7 +72,6 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
             onSelected: (value) {
-              // Handle popup menu item selection
               if (value == 'new_group') {
                 // Implement new group functionality
               } else if (value == 'starred_messages') {
@@ -88,9 +79,7 @@ class _HomePageState extends State<HomePage> {
                   context,
                   MaterialPageRoute(builder: (context) => StarredMessagesPage()),
                 );
-                // Implement starred messages functionality
               } else if (value == 'settings') {
-                // Implement settings functionality
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => SettingsPage()),
@@ -103,13 +92,12 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           Container(
-            height: 100,
+            height: 101,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: _statusList.length + 1,
               itemBuilder: (context, index) {
                 if (_currentIndex == 2) {
-                  // Don't show status circles on the "Calls" page
                   return SizedBox.shrink();
                 } else if (index == 0) {
                   return GestureDetector(
@@ -171,7 +159,6 @@ class _HomePageState extends State<HomePage> {
                   );
                 }
               },
-
             ),
           ),
           Expanded(
@@ -193,13 +180,10 @@ class _HomePageState extends State<HomePage> {
                     _buildContactItem('Jane', 'assets/images/jack.png', 'Lorem ipsum dolor sit amet.', '2 days ago'),
                     Divider(),
                     _buildContactItem('Alice', 'assets/images/jack.png', 'Lorem ipsum dolor sit amet.', '5/10/2023'),
-                    // Add more contact items here
                   ],
                 ),
-
                 // Group Page
                 Center(child: Text('Group')),
-
                 // Calls Page
                 Center(child: Text('Calls')),
               ],
@@ -227,9 +211,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
-
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (index) {
@@ -259,6 +241,7 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
   Widget _buildContactItem(String name, String imagePath, String lastMessage, String timestamp) {
     return ListTile(
       leading: CircleAvatar(
@@ -285,5 +268,4 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
 }

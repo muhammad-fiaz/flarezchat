@@ -12,12 +12,13 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../pages/HomeScreen.dart';
 import '../components/my_button.dart';
 
-
 /*
   Project: Flarez Chat
   Author: Muhammad Fiaz
   GitHub: https://github.com/muhammad-fiaz
 */
+
+/// A StatelessWidget representing the login page of the application.
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
 
@@ -26,7 +27,8 @@ class LoginPage extends StatelessWidget {
   final passwordController = TextEditingController();
   final GoogleSignIn googleSignIn = GoogleSignIn();
   final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
-  // sign user in method
+
+  /// Signs in the user.
   void signUserIn() {}
 
   @override
@@ -53,7 +55,6 @@ class LoginPage extends StatelessWidget {
                     size: 70,
                   ),
                 ),
-
 
                 const SizedBox(height: 50),
 
@@ -107,7 +108,7 @@ class LoginPage extends StatelessWidget {
 
                 // sign in button
                 MyButton(
-                  onTap: () => signUserIn_auth(context), // Pass the BuildContext to the method
+                  onTap: () => signUserIn_auth(context),
                 ),
 
                 const SizedBox(height: 50),
@@ -142,10 +143,10 @@ class LoginPage extends StatelessWidget {
 
                 const SizedBox(height: 50),
 
-// google + apple + facebook sign in buttons
+                // google + apple + facebook sign in buttons
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children:  [
+                  children: [
                     // google button
                     GestureDetector(
                       onTap: () => signInWithGoogle(context),
@@ -169,7 +170,6 @@ class LoginPage extends StatelessWidget {
                     ),
                   ],
                 ),
-
 
                 const SizedBox(height: 50),
 
@@ -207,16 +207,15 @@ class LoginPage extends StatelessWidget {
                     ],
                   ),
                 )
-
-
               ],
             ),
           ),
         ),
       ),
     );
-
   }
+
+  /// Displays a dialog indicating that a feature is coming soon.
   void showComingSoonMessage(BuildContext context) {
     showDialog(
       context: context,
@@ -236,22 +235,20 @@ class LoginPage extends StatelessWidget {
       },
     );
   }
+
+  /// Signs in the user with Google.
   Future<void> signInWithGoogle(BuildContext context) async {
     try {
-      // Trigger the Google sign-in flow
       final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
 
       if (googleUser != null) {
-        // Obtain the authentication details from the Google sign-in
         final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
 
-        // Create a new credential using the access token
         final AuthCredential credential = GoogleAuthProvider.credential(
           accessToken: googleAuth.accessToken,
           idToken: googleAuth.idToken,
         );
 
-        // Show loading popup
         showDialog(
           context: context,
           barrierDismissible: false,
@@ -273,29 +270,23 @@ class LoginPage extends StatelessWidget {
           },
         );
 
-        // Sign in to Firebase with the Google credential
         final UserCredential userCredential = await firebaseAuth.signInWithCredential(credential);
 
-        // Store user ID and email in persistent storage
+        Navigator.pop(context);
+
         final User? user = userCredential.user;
         if (user != null) {
           SharedPreferences prefs = await SharedPreferences.getInstance();
           prefs.setString('userId', user.uid);
           prefs.setString('email', user.email ?? '');
 
-          // Hide the loading popup
-          Navigator.pop(context);
-
-          // Navigate to the homepage if sign-in is successful
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(builder: (context) => HomePage()),
           );
         } else {
-          // Hide the loading popup
           Navigator.pop(context);
 
-          // Display error message for unsuccessful sign-in
           showDialog(
             context: context,
             builder: (context) => AlertDialog(
@@ -313,18 +304,15 @@ class LoginPage extends StatelessWidget {
       }
     } catch (error) {
       print('Google sign-in error: $error');
-      // Handle the error gracefully or display an error message
     }
   }
 
-
-
+  /// Signs in the user with email and password.
   void signUserIn_auth(BuildContext context) async {
     try {
       final String email = emailController.text.trim();
       final String password = passwordController.text.trim();
 
-      // Validate email and password
       if (email.isEmpty || password.isEmpty) {
         showDialog(
           context: context,
@@ -342,7 +330,6 @@ class LoginPage extends StatelessWidget {
         return;
       }
 
-      // Show loading popup
       showDialog(
         context: context,
         barrierDismissible: false,
@@ -364,20 +351,16 @@ class LoginPage extends StatelessWidget {
         },
       );
 
-      // Sign in the user with email and password
       final UserCredential userCredential =
       await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
 
-      // Hide the loading popup
       Navigator.pop(context);
 
-      // Navigate to the homepage if sign-in is successful
       final user = userCredential.user;
       if (user != null) {
-        // Store user ID and email in persistent storage
         SharedPreferences prefs = await SharedPreferences.getInstance();
         prefs.setString('userId', user.uid);
         prefs.setString('email', email);
@@ -388,10 +371,8 @@ class LoginPage extends StatelessWidget {
         );
       }
     } catch (e) {
-      // Hide the loading popup
       Navigator.pop(context);
 
-      // Handle sign-in errors
       print(e.toString());
 
       String errorMessage = 'An unknown error occurred.';
@@ -414,7 +395,7 @@ class LoginPage extends StatelessWidget {
             break;
         }
       }
-// this will show the exception when its occurs
+
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
@@ -436,8 +417,8 @@ class LoginPage extends StatelessWidget {
                       recognizer: TapGestureRecognizer()
                         ..onTap = () async {
                           final Uri websiteLaunchUri = Uri(
-                            scheme: 'https',  // for mail => scheme: 'mailto',
-                            path: 'github.com/muhammad-fiaz', //  path: 'support@example.com',
+                            scheme: 'https',
+                            path: 'github.com/muhammad-fiaz',
                             queryParameters: {'subject': 'Sign-in Error'},
                           );
                           if (await canLaunch(websiteLaunchUri.toString())) {
@@ -475,5 +456,4 @@ class LoginPage extends StatelessWidget {
       );
     }
   }
-
 }

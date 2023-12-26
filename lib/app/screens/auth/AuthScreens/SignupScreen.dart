@@ -18,6 +18,8 @@ import '../components/signup_my_button.dart';
   Author: Muhammad Fiaz
   GitHub: https://github.com/muhammad-fiaz
 */
+
+/// A StatefulWidget representing the sign-up page of the application.
 class SignUpPage extends StatefulWidget {
   SignUpPage({Key? key}) : super(key: key);
 
@@ -25,25 +27,24 @@ class SignUpPage extends StatefulWidget {
   _SignUpPageState createState() => _SignUpPageState();
 }
 
+/// The state class for the SignUpPage.
 class _SignUpPageState extends State<SignUpPage> {
-  // text editing controllers
+  // Text editing controllers
   final usernameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   File? _selectedImage;
 
-  // sign user up method
-  void signUserUp() {}
-
+  /// Dispose of controllers when the widget is disposed.
   @override
   void dispose() {
-    // dispose of controllers when the widget is disposed
     usernameController.dispose();
     emailController.dispose();
     passwordController.dispose();
     super.dispose();
   }
 
+  /// Build method for the sign-up page.
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,6 +57,7 @@ class _SignUpPageState extends State<SignUpPage> {
               children: [
                 const SizedBox(height: 50),
 
+                // InkWell for selecting image
                 InkWell(
                   onTap: _pickImageAndCrop,
                   child: Container(
@@ -81,6 +83,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
                 const SizedBox(height: 50),
 
+                // Text indicating to create an account
                 Text(
                   'Create an account to get started!',
                   style: TextStyle(
@@ -95,7 +98,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
                 const SizedBox(height: 25),
 
-                // username textfield
+                // Username textfield
                 MyTextField(
                   controller: usernameController,
                   hintText: 'Username',
@@ -104,7 +107,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
                 const SizedBox(height: 10),
 
-                // email textfield
+                // Email textfield
                 MyTextField(
                   controller: emailController,
                   hintText: 'Email',
@@ -113,7 +116,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
                 const SizedBox(height: 10),
 
-                // password textfield
+                // Password textfield
                 MyTextField(
                   controller: passwordController,
                   hintText: 'Password',
@@ -121,7 +124,8 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
 
                 const SizedBox(height: 25),
-                //on Signup button
+
+                // Sign Up button
                 MyButton(
                   text: 'Sign Up',
                   onTap: () => Create_Account(context),
@@ -129,7 +133,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
                 const SizedBox(height: 30),
 
-                // or continue with
+                // Or continue with
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: Row(
@@ -159,27 +163,28 @@ class _SignUpPageState extends State<SignUpPage> {
 
                 const SizedBox(height: 30),
 
-                // google + apple + facebook sign up buttons
+                // Google + Apple + Facebook sign-up buttons
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
-                    // google button
+                    // Google button
                     SquareTile(imagePath: 'assets/images/google.png'),
 
                     SizedBox(width: 25),
 
-                    // apple button
+                    // Apple button
                     SquareTile(imagePath: 'assets/images/apple.png'),
 
                     SizedBox(width: 25),
 
-                    // facebook button
+                    // Facebook button
                     SquareTile(imagePath: 'assets/images/facebook.png'),
                   ],
                 ),
 
                 const SizedBox(height: 50),
 
+                // Already have an account? Sign in now
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -214,7 +219,6 @@ class _SignUpPageState extends State<SignUpPage> {
                     ],
                   ),
                 )
-
               ],
             ),
           ),
@@ -223,7 +227,7 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
-//this will pick the image and crop from device
+  /// Pick and crop image from the device.
   Future<void> _pickImageAndCrop() async {
     final picker = ImagePicker();
     final pickedImage = await picker.pickImage(source: ImageSource.gallery);
@@ -255,10 +259,10 @@ class _SignUpPageState extends State<SignUpPage> {
     }
   }
 
-// Create a GlobalKey for the loading dialog
+  // GlobalKey for the loading dialog
   final GlobalKey<State> _loadingDialogKey = GlobalKey<State>();
 
-// Create a function to show the loading dialog
+  /// Show the loading dialog.
   void _showLoadingDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -286,12 +290,12 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
-// Function to hide the loading dialog
+  /// Hide the loading dialog.
   void _hideLoadingDialog(BuildContext context) {
     Navigator.of(context).pop();
   }
 
-// Function to create an account in Firebase
+  /// Create an account in Firebase.
   Future<void> Create_Account(BuildContext context) async {
     final email = emailController.text.trim();
     final password = passwordController.text.trim();
@@ -355,7 +359,7 @@ class _SignUpPageState extends State<SignUpPage> {
       // Hide the loading dialog
       _hideLoadingDialog(context);
 
-      // Clear navigation stack and navigate to home screen
+      // Clear navigation stack and navigate to the home screen
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (context) => HomePage()),
             (route) => false,
@@ -384,8 +388,6 @@ class _SignUpPageState extends State<SignUpPage> {
           );
         },
       );
-
-    }
     }
   }
-
+}
