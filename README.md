@@ -4,6 +4,16 @@ Flarez Chat is a messaging app that allows users to connect and communicate with
 
 Please note that this project is a work in progress, and certain features may be incomplete or subject to changes. Use it at your own risk.
 
+
+## Sample ScreenShots
+
+<div align="center">
+  <img src="https://github.com/muhammad-fiaz/flarezchat/assets/75434191/b138a73f-3117-427b-b092-0467a4d40bce.png" alt="login-preview" width="200">
+  <img src="https://github.com/muhammad-fiaz/flarezchat/assets/75434191/ef5e0103-22d9-4561-81c0-2b84cc8caca7.png" alt="settings-preview" width="200">
+     <img src="https://github.com/muhammad-fiaz/flarezchat/assets/75434191/3735b1d8-0f98-4cfe-a800-9dd30d0fc2fc.png" alt="HomeScreen-preview" width="200">
+  <img src="https://github.com/muhammad-fiaz/flarezchat/assets/75434191/b138a73f-3117-427b-b092-0467a4d40bce.png" alt="contacts-preview" width="200">
+</div>
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
