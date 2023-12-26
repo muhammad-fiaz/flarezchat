@@ -83,14 +83,14 @@ Run the following command to clone the repository:
 1. Clone the repository:
 
 
-                    git clone https://github.com/muhammad-fiaz/flarez-chat.git
+                    git clone https://github.com/muhammad-fiaz/flarezchat.git
 
 This will create a local copy of the Flarez Chat project on your machine.
 
 
 2. Once the cloning process is complete, navigate to the project directory using the following command:
 
-                  cd flarez-chat
+                  cd flarezchat
 
 3. Before running the app, make sure to install the required dependencies. Run the following command:
 
