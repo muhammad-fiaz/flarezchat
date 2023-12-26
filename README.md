@@ -1,9 +1,27 @@
+<div align="center">
+  
 # Flarez Chat
+  
+[![Last Commit](https://img.shields.io/github/last-commit/muhammad-fiaz/flarezchat)](https://github.com/muhammad-fiaz/flarezchat)
+[![GitHub Issues](https://img.shields.io/github/issues/muhammad-fiaz/flarezchat)](https://github.com/muhammad-fiaz/flarezchat/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/muhammad-fiaz/flarezchat)](https://github.com/muhammad-fiaz/flarezchat/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/muhammad-fiaz/flarezchat)](https://github.com/muhammad-fiaz/flarezchat/network)
+[![Stability](https://img.shields.io/badge/Stability-Stable-green)](https://github.com/muhammad-fiaz/flarezchat)
+![Popularity Views](https://komarev.com/ghpvc/?username=muhammad-fiaz&style=flat&label=Popularity)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/muhammad-fiaz/flarezchat)
+[![GitHub contributors](https://img.shields.io/github/contributors/muhammad-fiaz/flarezchat)](https://github.com/muhammad-fiaz/flarezchat/graphs/contributors)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/muhammad-fiaz/flarezchat)](https://github.com/muhammad-fiaz/flarezchat/pulls)
+
+[![Maintainer](https://img.shields.io/badge/Maintainer-muhammad--fiaz-blue)](https://github.com/muhammad-fiaz)
+[![Sponsor on GitHub](https://img.shields.io/badge/Sponsor%20on%20GitHub-Become%20a%20Sponsor-blue)](https://github.com/sponsors/muhammad-fiaz)
+
+[![Follow me on GitHub](https://img.shields.io/github/followers/muhammad-fiaz?label=Follow&style=social)](https://github.com/muhammad-fiaz)
+
+</div>
 
 Flarez Chat is a messaging app that allows users to connect and communicate with each other. It features an intuitive and user-friendly interface that makes it easy to send messages, make voice and video calls, and share files with others. With its unique name and sleek design, Flarez Chat is a modern and trendy app that is perfect for anyone looking to stay connected with friends, family, and colleagues.
 
-Please note that this project is a work in progress, and certain features may be incomplete or subject to changes. Use it at your own risk.
-
+Please note that this project is a work in progress, and certain features may be incomplete or subject to changes. If you want to contribute, make sure to fork the project and star 🌟 the repository.
 
 ## Sample ScreenShots
 
