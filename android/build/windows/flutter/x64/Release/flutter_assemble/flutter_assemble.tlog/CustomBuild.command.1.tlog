@@ -1,0 +1,28 @@
+^D:\FLUTTER\FLAREZCHAT\ANDROID\BUILD\WINDOWS\CMAKEFILES\41AA5DC4A67CB77626D2D6670033EC8C\FLUTTER_WINDOWS.DLL.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\src\flutter PROJECT_DIR=D:\Flutter\flarezchat\android FLUTTER_ROOT=C:\src\flutter FLUTTER_EPHEMERAL_DIR=D:\Flutter\flarezchat\android\windows\flutter\ephemeral PROJECT_DIR=D:\Flutter\flarezchat\android FLUTTER_TARGET=D:\Flutter\flarezchat\android\lib/main.dart DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==,RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC9kNDRiNWE5NGM5NzZmYmI2NTgxNTM3NGY2MWFiNTM5MmEyMjBiMDg0Lw== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=D:\Flutter\flarezchat\android\.dart_tool\package_config.json C:/src/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Release
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\FLUTTER\FLAREZCHAT\ANDROID\BUILD\WINDOWS\CMAKEFILES\CBBDA3031A580542D2EA5A5F27B0399D\FLUTTER_ASSEMBLE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\FLUTTER\FLAREZCHAT\ANDROID\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/Flutter/flarezchat/android/windows -BD:/Flutter/flarezchat/android/build/windows --check-stamp-file D:/Flutter/flarezchat/android/build/windows/flutter/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

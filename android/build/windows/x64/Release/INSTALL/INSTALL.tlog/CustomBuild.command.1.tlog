@@ -1,0 +1,10 @@
+^D:\FLUTTER\FLAREZCHAT\ANDROID\BUILD\WINDOWS\CMAKEFILES\892500053CF05FC3944F6EE38BB432D5\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

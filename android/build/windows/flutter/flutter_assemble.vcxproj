@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile|x64">
+      <Configuration>Profile</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F1B770A8-B091-3393-ACDA-88077291DD5E}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>flutter_assemble</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Flutter\flarezchat\android\build\windows\CMakeFiles\41aa5dc4a67cb77626d2d6670033ec8c\flutter_windows.dll.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating D:/Flutter/flarezchat/android/windows/flutter/ephemeral/flutter_windows.dll, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/flutter_export.h, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/flutter_windows.h, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/flutter_messenger.h, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/flutter_plugin_registrar.h, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/flutter_texture_registrar.h, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/cpp_client_wrapper/core_implementations.cc, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/cpp_client_wrapper/standard_codec.cc, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/cpp_client_wrapper/plugin_registrar.cc, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/cpp_client_wrapper/flutter_engine.cc, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/cpp_client_wrapper/flutter_view_controller.cc, _phony_</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\src\flutter PROJECT_DIR=D:\Flutter\flarezchat\android FLUTTER_ROOT=C:\src\flutter FLUTTER_EPHEMERAL_DIR=D:\Flutter\flarezchat\android\windows\flutter\ephemeral PROJECT_DIR=D:\Flutter\flarezchat\android FLUTTER_TARGET=D:\Flutter\flarezchat\android\lib/main.dart DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==,RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC9kNDRiNWE5NGM5NzZmYmI2NTgxNTM3NGY2MWFiNTM5MmEyMjBiMDg0Lw== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=D:\Flutter\flarezchat\android\.dart_tool\package_config.json C:/src/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_windows.dll;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_export.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_windows.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_messenger.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_plugin_registrar.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_texture_registrar.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\core_implementations.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\standard_codec.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\plugin_registrar.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\flutter_engine.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\flutter_view_controller.cc;D:\Flutter\flarezchat\android\build\windows\flutter\_phony_</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Generating D:/Flutter/flarezchat/android/windows/flutter/ephemeral/flutter_windows.dll, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/flutter_export.h, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/flutter_windows.h, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/flutter_messenger.h, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/flutter_plugin_registrar.h, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/flutter_texture_registrar.h, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/cpp_client_wrapper/core_implementations.cc, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/cpp_client_wrapper/standard_codec.cc, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/cpp_client_wrapper/plugin_registrar.cc, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/cpp_client_wrapper/flutter_engine.cc, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/cpp_client_wrapper/flutter_view_controller.cc, _phony_</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\src\flutter PROJECT_DIR=D:\Flutter\flarezchat\android FLUTTER_ROOT=C:\src\flutter FLUTTER_EPHEMERAL_DIR=D:\Flutter\flarezchat\android\windows\flutter\ephemeral PROJECT_DIR=D:\Flutter\flarezchat\android FLUTTER_TARGET=D:\Flutter\flarezchat\android\lib/main.dart DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==,RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC9kNDRiNWE5NGM5NzZmYmI2NTgxNTM3NGY2MWFiNTM5MmEyMjBiMDg0Lw== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=D:\Flutter\flarezchat\android\.dart_tool\package_config.json C:/src/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Profile
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_windows.dll;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_export.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_windows.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_messenger.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_plugin_registrar.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_texture_registrar.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\core_implementations.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\standard_codec.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\plugin_registrar.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\flutter_engine.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\flutter_view_controller.cc;D:\Flutter\flarezchat\android\build\windows\flutter\_phony_</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating D:/Flutter/flarezchat/android/windows/flutter/ephemeral/flutter_windows.dll, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/flutter_export.h, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/flutter_windows.h, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/flutter_messenger.h, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/flutter_plugin_registrar.h, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/flutter_texture_registrar.h, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/cpp_client_wrapper/core_implementations.cc, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/cpp_client_wrapper/standard_codec.cc, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/cpp_client_wrapper/plugin_registrar.cc, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/cpp_client_wrapper/flutter_engine.cc, D:/Flutter/flarezchat/android/windows/flutter/ephemeral/cpp_client_wrapper/flutter_view_controller.cc, _phony_</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\src\flutter PROJECT_DIR=D:\Flutter\flarezchat\android FLUTTER_ROOT=C:\src\flutter FLUTTER_EPHEMERAL_DIR=D:\Flutter\flarezchat\android\windows\flutter\ephemeral PROJECT_DIR=D:\Flutter\flarezchat\android FLUTTER_TARGET=D:\Flutter\flarezchat\android\lib/main.dart DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==,RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC9kNDRiNWE5NGM5NzZmYmI2NTgxNTM3NGY2MWFiNTM5MmEyMjBiMDg0Lw== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=D:\Flutter\flarezchat\android\.dart_tool\package_config.json C:/src/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Release
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_windows.dll;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_export.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_windows.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_messenger.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_plugin_registrar.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_texture_registrar.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\core_implementations.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\standard_codec.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\plugin_registrar.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\flutter_engine.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\flutter_view_controller.cc;D:\Flutter\flarezchat\android\build\windows\flutter\_phony_</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</VerifyInputsAndOutputsExist>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Flutter\flarezchat\android\build\windows\CMakeFiles\cbbda3031a580542d2ea5a5f27b0399d\flutter_assemble.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_windows.dll;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_export.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_windows.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_messenger.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_plugin_registrar.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_texture_registrar.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\core_implementations.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\standard_codec.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\plugin_registrar.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\flutter_engine.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\flutter_view_controller.cc;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Flutter\flarezchat\android\build\windows\flutter\CMakeFiles\flutter_assemble</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_windows.dll;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_export.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_windows.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_messenger.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_plugin_registrar.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_texture_registrar.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\core_implementations.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\standard_codec.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\plugin_registrar.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\flutter_engine.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\flutter_view_controller.cc;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">D:\Flutter\flarezchat\android\build\windows\flutter\CMakeFiles\flutter_assemble</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_windows.dll;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_export.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_windows.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_messenger.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_plugin_registrar.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\flutter_texture_registrar.h;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\core_implementations.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\standard_codec.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\plugin_registrar.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\flutter_engine.cc;D:\Flutter\flarezchat\android\windows\flutter\ephemeral\cpp_client_wrapper\flutter_view_controller.cc;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Flutter\flarezchat\android\build\windows\flutter\CMakeFiles\flutter_assemble</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</VerifyInputsAndOutputsExist>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Flutter\flarezchat\android\windows\flutter\CMakeLists.txt">
+      <StdOutEncoding>UTF-8</StdOutEncoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Flutter/flarezchat/android/windows/flutter/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/Flutter/flarezchat/android/windows -BD:/Flutter/flarezchat/android/build/windows --check-stamp-file D:/Flutter/flarezchat/android/build/windows/flutter/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Flutter\flarezchat\android\windows\flutter\ephemeral\generated_config.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Flutter\flarezchat\android\build\windows\flutter\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Building Custom Rule D:/Flutter/flarezchat/android/windows/flutter/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/Flutter/flarezchat/android/windows -BD:/Flutter/flarezchat/android/build/windows --check-stamp-file D:/Flutter/flarezchat/android/build/windows/flutter/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">D:\Flutter\flarezchat\android\windows\flutter\ephemeral\generated_config.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">D:\Flutter\flarezchat\android\build\windows\flutter\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Flutter/flarezchat/android/windows/flutter/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/Flutter/flarezchat/android/windows -BD:/Flutter/flarezchat/android/build/windows --check-stamp-file D:/Flutter/flarezchat/android/build/windows/flutter/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Flutter\flarezchat\android\windows\flutter\ephemeral\generated_config.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Flutter\flarezchat\android\build\windows\flutter\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Flutter\flarezchat\android\build\windows\flutter\CMakeFiles\flutter_assemble">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Flutter\flarezchat\android\build\windows\ZERO_CHECK.vcxproj">
+      <Project>{B7B36547-D963-3837-92DB-3D003ABC6829}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

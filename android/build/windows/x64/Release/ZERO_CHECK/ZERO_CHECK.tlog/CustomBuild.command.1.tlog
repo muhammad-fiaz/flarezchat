@@ -1,0 +1,10 @@
+^D:\FLUTTER\FLAREZCHAT\ANDROID\BUILD\WINDOWS\CMAKEFILES\892500053CF05FC3944F6EE38BB432D5\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/Flutter/flarezchat/android/windows -BD:/Flutter/flarezchat/android/build/windows --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Flutter/flarezchat/android/build/windows/android.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
