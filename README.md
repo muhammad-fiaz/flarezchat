@@ -21,7 +21,7 @@
 
 Flarez Chat is a messaging app that allows users to connect and communicate with each other. It features an intuitive and user-friendly interface that makes it easy to send messages, make voice and video calls, and share files with others. With its unique name and sleek design, Flarez Chat is a modern and trendy app that is perfect for anyone looking to stay connected with friends, family, and colleagues.
 
-Please note that this project is a work in progress, and certain features may be incomplete or subject to changes. If you want to contribute, make sure to fork the project and star 🌟 the repository.
+Please note that this project is a work in progress, and certain features may be incomplete or subject to changes. If you want to contribute, make sure to [fork](https://github.com/muhammad-fiaz/flarezchat/fork) the project and star 🌟 the repository.
 
 ## Sample ScreenShots
 
